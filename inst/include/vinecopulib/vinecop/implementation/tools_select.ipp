@@ -611,7 +611,7 @@ inline double VinecopSelector::get_mbicv_of_tree(size_t t, double loglik)
     double npars = get_npars_of_tree(t);
     size_t non_indeps = get_num_non_indeps_of_tree(t);
     size_t indeps = d_ - t - 1 - non_indeps;
-    double psi0 = std::pow(psi0_, t + 1);
+    double psi0 = std::pow(psi0_, static_cast<double>(t + 1) / std::log10(d_));
     double log_prior =
         static_cast<double>(non_indeps) * std::log(psi0) +
         static_cast<double>(indeps) * std::log(1.0 - psi0);
