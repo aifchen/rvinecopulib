@@ -593,7 +593,9 @@ inline void VinecopSelector::select_tree(size_t t)
         remove_vertex_data(new_tree);  // no longer needed
         if (controls_.get_selection_criterion() == "mbicv") {
             // adjust prior probability to tree level
-            controls_.set_psi0(std::pow(psi0_, t + 1));
+            controls_.set_psi0(std::pow(psi0_, 
+                                        static_cast<double>(t + 1) / 
+                                            std::log10(d_)));
         }
         if (trees_opt_.size() > t + 1) {
             select_pair_copulas(new_tree, trees_opt_[t + 1]);
