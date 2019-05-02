@@ -6,7 +6,7 @@
 
 #ifndef BOOST_MATH_PROMOTE_DOUBLE_POLICY
     #define BOOST_MATH_PROMOTE_DOUBLE_POLICY false
-#else 
+#else
     #undef BOOST_MATH_PROMOTE_DOUBLE_POLICY
     #define BOOST_MATH_PROMOTE_DOUBLE_POLICY false
 #endif
